@@ -1,0 +1,30 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin transition($content){
+  -webkit-transition: $content;
+  	 -moz-transition: $content;
+      -ms-transition: $content;
+          transition: $content;
+}
+
+//内部特性也要加前缀的方法，比如-webkit-transform(XXX)
+@mixin pTransition($content){    
+  -webkit-transition: -webkit-#{$content};
+ 	 -moz-transition: -moz-#{$content};
+  	  -ms-transition: -ms-#{$content};
+ 	      transition: $content;
+} 
+
+@mixin scaleNt3d($x:1, $y:1, $a:0, $b:0, $c:0){
+  -webkit-transform: scale($x,$y) translate3d($a,$b,$c);
+     -moz-transform: scale($x,$y) translate3d($a,$b,$c);
+      -ms-transform: scale($x,$y) translate3d($a,$b,$c);
+          transform: scale($x,$y) translate3d($a,$b,$c);
+}
+
+
